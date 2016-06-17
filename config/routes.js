@@ -48,11 +48,11 @@ module.exports = function (app, passport) {
         res.send(err);
 
       res.send("Your post has been successfully updated");
-    })
+    });
   });
 
   app.get('/post/comments', function(req, res){
-    var comments = Post.findById(req.params.id);
+    var comments = Comment.findById(req.params.post_id);
     for x in comments
       res.send(comments); //Is this logic correct to diaplay all the comments?
   });
@@ -60,6 +60,16 @@ module.exports = function (app, passport) {
   app.get('/post/comments/:id', function(req, res){
     var comment = Comment.findById(req.params.id);
     res.send(comment);
+  });
+
+  app.get('/post/comments/:id/edit', function(req, res){
+    var comment = Comment.findById(req.params.id);
+    comment.content = req.body.content;
+    comment.save(function(err){
+      if(err)
+        res.send(err);
+      res.send("Your comment was saved successfully!");
+    });
   });
 
 
