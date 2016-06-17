@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [![Build Status](https://img.shields.io/travis/madhums/node-express-mongoose.svg?style=flat)](https://travis-ci.org/madhums/node-express-mongoose)
 [![Dependencies](https://img.shields.io/david/madhums/node-express-mongoose.svg?style=flat)](https://david-dm.org/madhums/node-express-mongoose)
 [![Code Climate](https://codeclimate.com/github/madhums/node-express-mongoose/badges/gpa.svg)](https://codeclimate.com/github/madhums/node-express-mongoose)
@@ -23,3 +24,7 @@ Checkout the [apps that are built using this approach](https://github.com/madhum
 ## License
 
 MIT
+=======
+# the-social
+A simple social web application written in node js using express, passport, react and redux.
+>>>>>>> 81dd654c2aa22f662093d873686041b9b8bdd6ec
