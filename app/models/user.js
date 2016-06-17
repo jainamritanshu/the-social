@@ -80,16 +80,17 @@ var PostCatSchema = new Schema({
 module.exports = mongoose.model('PostCat': PostCatSchema);
 
 var AlbumSchema = new Schema({
-	album_id: ObjectId,
 	pub_date: {type: Date, default: 'Date.now'},
-	img_id: {type: Schema.Types.ObjectId, default: 'Image'},
+	img_id: {type: Schema.Types.ObjectId, ref: 'Image'},
 	name: {type: String, default: ''}
 })
 
 module.exports = mongoose.model('Album': AlbumSchema);
 
 var ImageSchema = new Schema({
-	//url for image
+	image: {type: Image},
+	name: {type: String, default: ''},
+	album = {type: Schema.Types.ObjectId, ref: 'Album'}
 })
 
 module.exports = mongoose.model('Image': ImageSchema);
