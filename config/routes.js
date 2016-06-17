@@ -51,6 +51,17 @@ module.exports = function (app, passport) {
     })
   });
 
+  app.get('/post/comments', function(req, res){
+    var comments = Post.findById(req.params.id);
+    for x in comments
+      res.send(comments); //Is this logic correct to diaplay all the comments?
+  });
+
+  app.get('/post/comments/:id', function(req, res){
+    var comment = Comment.findById(req.params.id);
+    res.send(comment);
+  });
+
 
   app.use(function (err, req, res, next) {
     // treat as 404

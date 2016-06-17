@@ -1,30 +1,9 @@
-<<<<<<< HEAD
-[![Build Status](https://img.shields.io/travis/madhums/node-express-mongoose.svg?style=flat)](https://travis-ci.org/madhums/node-express-mongoose)
-[![Dependencies](https://img.shields.io/david/madhums/node-express-mongoose.svg?style=flat)](https://david-dm.org/madhums/node-express-mongoose)
-[![Code Climate](https://codeclimate.com/github/madhums/node-express-mongoose/badges/gpa.svg)](https://codeclimate.com/github/madhums/node-express-mongoose)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/madhums/node-express-mongoose?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-[![Gittip](https://img.shields.io/gratipay/madhums.svg?style=flat)](https://www.gratipay.com/madhums/)
-
-## Node Express Mongoose
-
-A boilerplate application for building web apps using express, mongoose and passport.
-
-Read the [wiki](https://github.com/madhums/node-express-mongoose/wiki) to understand how the application is structured.
+A boilerplate for building social web applications using express, passport and mongodb.
 
 ## Usage
 
-    $ git clone https://github.com/madhums/node-express-mongoose.git
-    $ cd node-express-mongoose
+    $ git clone https://github.com/jainamritanshu/the-social
+    $ cd the-social
     $ npm install
     $ cp .env.example .env
     $ npm start
-
-Checkout the [apps that are built using this approach](https://github.com/madhums/node-express-mongoose/wiki/Apps-built-using-this-approach)
-
-## License
-
-MIT
-=======
-# the-social
-A simple social web application written in node js using express, passport, react and redux.
->>>>>>> 81dd654c2aa22f662093d873686041b9b8bdd6ec
