@@ -2,12 +2,12 @@
 
 
 const home = require('../app/controllers/home');
-var Post = require('../models/users.js');
-var PostCat = require('../models/users.js');
-var Comment = require('../models/users.js');
-var User = require('../app/models/user');
-var Album = require('../models/users.js');
-var Image = require('../models/users.js');
+var Post = require('../app/models/user.js').post;
+var PostCat = require('../app/models/user.js').postcat;
+var Comment = require('../app/models/user.js').comment;
+var User = require('../app/models/user.js').user;
+var Album = require('../app/models/user.js').album;
+var Image = require('../app/models/user.js').image;
 
 
 module.exports = function (app, passport) {
@@ -22,7 +22,6 @@ module.exports = function (app, passport) {
     post.name = req.body.name;
     post.content = req.body.content;
     post.author = req.User.name;
-    post.pub_date = req.body.pub_date;
 
     post.save(function(err){
       if (err)

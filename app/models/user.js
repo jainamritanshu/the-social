@@ -40,38 +40,42 @@ var PostSchema = new Schema({
 	name: {type:String, default: ''},
 	content: {type:String, default: ''},
 	author: {type:String, default:''},
-  	pub_date: {type:Date, required:true, default: Date.now},
 	comment_id: {type: Schema.Types.ObjectId, ref: 'CommentSchema'},
 	post_cat_id: {type: Schema.Types.ObjectId, ref: 'PostCatSchema'}
 });
-var post = mongoose.model('Post', PostSchema);
+var post = mongoose.model('PostSchema', PostSchema);
 
 var CommentSchema = new Schema({
 	content: {type:String, default: ''},
 	post_id: {type: Schema.Types.ObjectId, ref: 'PostSchema'}
 });
 
-var comment = mongoose.model('Comment', CommentSchema);	
+var comment = mongoose.model('CommentSchema', CommentSchema);	
 
 var PostCatSchema = new Schema({
 	name: {type:String, default: ''}
 });
 
-var postcat = mongoose.model('PostCat', PostCatSchema);
+var postcat = mongoose.model('PostCatSchema', PostCatSchema);
 
 var AlbumSchema = new Schema({
-	pub_date: {type: Date, default: 'Date.now'},
 	img_id: {type: Schema.Types.ObjectId, ref: 'ImageSchema'},
 	name: {type: String, default: ''}
 });
-var album = mongoose.model('Album', AlbumSchema);
+var album = mongoose.model('AlbumSchema', AlbumSchema);
 
 
 var ImageSchema = new Schema({
-	image: {type: Image},
+	//image: {type: Image},
 	name: {type: String, default: ''}
 }) ;
 
-var image = mongoose.model('Image', ImageSchema);
+var image = mongoose.model('ImageSchema', ImageSchema);
 
-module.exports = ({'user': user}, {'post': post}, {'postcat': postcat}, {'comment': comment}, {'album': album}, {'image': image});
+//module.exports = ({'user': user}, {'post': post}, {'postcat': postcat}, {'comment': comment}, {'album': album}, {'image': image});
+module.exports.post = (post, post);
+module.exports.postcat = (postcat, postcat);
+module.exports.comment = (comment, comment);
+module.exports.user = (user, user);
+module.exports.album = (album, album);
+module.exports.image = (image, image);
