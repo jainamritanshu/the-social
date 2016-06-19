@@ -2,12 +2,12 @@
 
 
 const home = require('../app/controllers/home');
-//var Post = require('../models/users.js');
-//var PostCat = require('../models/users.js');
-//var Comment = require('../models/users.js');
+var Post = require('../models/users.js');
+var PostCat = require('../models/users.js');
+var Comment = require('../models/users.js');
 var User = require('../app/models/user');
-//var Album = require('../models/users.js');
-//var Image = require('../models/users.js');
+var Album = require('../models/users.js');
+var Image = require('../models/users.js');
 
 
 module.exports = function (app, passport) {
@@ -52,9 +52,7 @@ module.exports = function (app, passport) {
 
   app.get('/post/comments', function(req, res){
     var comments = Comment.findById(req.params.post_id);
-    comments.map(function(comment){
-      res.send(comment);
-    })
+      res.send(comments);
        //Is this logic correct to diaplay all the comments?
   });
 

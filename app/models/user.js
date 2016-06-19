@@ -32,7 +32,7 @@ ashu.save(function(err){
 	if(err)
 		throw err;
 	console.log('User saved successfully!');
-});
+});*/
 
 var PostSchema = new Schema({
 	name: {type:String, default: ''},
@@ -63,6 +63,6 @@ var ImageSchema = new Schema({
 	image: {type: Image},
 	name: {type: String, default: ''},
 	album = {type: Schema.Types.ObjectId, ref: 'AlbumSchema'}
-}) */
+}) 
 
-module.exports = mongoose.model('User', UserSchema/**, {'Post': PostSchema}, {'PostCat': PostCatSchema}, {'Comment': CommentSchema}, {'Album': AlbumSchema}, {'Image': ImageSchema}*/);
+module.exports = mongoose.model({('User', UserSchema)}, {('Post', PostSchema)}, {('PostCat', PostCatSchema)}, {('Comment', CommentSchema)}, {('Album', AlbumSchema)}, {('Image', ImageSchema)});
