@@ -1,11 +1,5 @@
 'use strict';
 
-/*
- * nodejs-express-mongoose
- * Copyright(c) 2015 Madhusudhan Srinivasa <madhums8@gmail.com>
- * MIT Licensed
- */
-
 /**
  * Module dependencies
  */
@@ -57,6 +51,6 @@ function listen () {
 
 function connect () {
   var options = { server: { socketOptions: { keepAlive: 1 } } };
-  var connection = mongoose.connect('mongodb://localhost/admin', options).connection;
+  var connection = mongoose.connect(config.db, options).connection;
   return connection;
 }
