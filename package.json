@@ -34,6 +34,7 @@
     "mongoose": "~4.4.17",
     "mongoose-user": "~0.0.1",
     "morgan": "~1.7.0",
+    "nightwatch": "^0.9.4",
     "passport": "~0.3.2",
     "passport-local": "~1.0.0",
     "view-helpers": "~0.1.5",
@@ -44,6 +45,7 @@
     "babel-preset-stage-0": "~6.5.0",
     "babel-tape-runner": "~2.0.1",
     "eslint": "~2.11.0",
+    "karma": "^0.13.22",
     "nodemon": "~1.9.2",
     "supertest": "~1.2.0",
     "tape": "~4.5.1"
