@@ -44,7 +44,6 @@ module.exports = function (app, passport) {
     user.save(function(err){
       if (err)
         throw err;
-        console.log('lund le lo ab -_-!');
 
       console.log('ho gya bc!');
     });
@@ -55,7 +54,7 @@ module.exports = function (app, passport) {
     res.send(post);
   });  
 
-  app.get('/post/:id/edit', function(req, res){
+  app.put('/post/:id/edit', function(req, res){
     var post = Post.findById(req.params.id);
     post.name = req.body.name;
     post.content = req.body.content;
@@ -74,7 +73,7 @@ module.exports = function (app, passport) {
        //Is this logic correct to diaplay all the comments?
   });
 
-  app.get('/post/comments/:id', function(req, res){
+  app.get('/post/comment/:id', function(req, res){
     var comment = Comment.findById(req.params.id);
     res.send(comment);
   });
