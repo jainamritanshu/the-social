@@ -10,7 +10,7 @@
  * Module dependencies
  */
 
-require('dotenv').config();
+require('dotenv').config({silent: true});
 
 const fs = require('fs');
 const join = require('path').join;

@@ -2,20 +2,19 @@
 
 
 const home = require('../app/controllers/home');
-var Post = require('../models/users.js');
-var PostCat = require('../models/users.js');
-var Comment = require('../models/users.js');
-var User = require('../models/users.js');
-var Album = require('../models/users.js');
-var Image = require('../models/users.js');
+//var Post = require('../models/users.js');
+//var PostCat = require('../models/users.js');
+//var Comment = require('../models/users.js');
+var User = require('../app/models/user');
+//var Album = require('../models/users.js');
+//var Image = require('../models/users.js');
 
 
 module.exports = function (app, passport) {
 
-  app.get('/home', function(res, req)(
+  app.get('/home', function(res, req){
     res.send("Welcome Home!");
     console.log("ye to hua");
-    ));
 
   app.post('/post/create', function(req, res){
     var post = new Post();
@@ -53,8 +52,10 @@ module.exports = function (app, passport) {
 
   app.get('/post/comments', function(req, res){
     var comments = Comment.findById(req.params.post_id);
-    for x in comments
-      res.send(comments); //Is this logic correct to diaplay all the comments?
+    comments.map(function(comment){
+      res.send(comment);
+    })
+       //Is this logic correct to diaplay all the comments?
   });
 
   app.get('/post/comments/:id', function(req, res){
@@ -71,6 +72,9 @@ module.exports = function (app, passport) {
       res.send("Your comment was saved successfully!");
     });
   });
+    });
+
+  
 
 
   app.use(function (err, req, res, next) {
