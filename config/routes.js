@@ -12,9 +12,11 @@ var Image = require('../app/models/user.js').image;
 
 module.exports = function (app, passport) {
 
-  app.get('/home', function(res, req){
-    res.send("Welcome Home!");
-    console.log("ye to hua");
+  app.get('/home', function(req, res){
+    res.send("Hello!");
+    console.log("ho gya");
+  });
+
 
   app.post('/post/create', function(req, res){
     var post = new Post();
@@ -28,6 +30,23 @@ module.exports = function (app, passport) {
         res.send(err);
 
       res.send("Your post has been saved");
+      console.log("post saved!");
+    });
+  });
+
+  app.post('/user/create', function(req, res){
+    var user = new User;
+
+    user.name = 'ashu';
+    user.email = 'jainamritanshu@gmail.com';
+    user.phone_no = '995310861';
+
+    user.save(function(err){
+      if (err)
+        throw err;
+        console.log('lund le lo ab -_-!');
+
+      console.log('ho gya bc!');
     });
   });
 
@@ -69,7 +88,7 @@ module.exports = function (app, passport) {
       res.send("Your comment was saved successfully!");
     });
   });
-    });
+    
 
   
 
