@@ -55,9 +55,6 @@ module.exports = function (app, passport) {
   // Logging middleware
   if (env !== 'test') app.use(morgan(log));
 
-  // set views path and default layout
-  app.set('views', config.root + '/app/views');
-  app.set('view engine', 'jade');
 
   // expose package.json to views
   app.use(function (req, res, next) {

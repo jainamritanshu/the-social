@@ -24,6 +24,7 @@
     "cross-env": "~1.0.7",
     "csurf": "1.9.0",
     "dotenv": "~2.0.0",
+    "ejs": "^2.4.2",
     "express": "4.13.4",
     "express-session": "~1.13.0",
     "forever": "~0.15.1",
