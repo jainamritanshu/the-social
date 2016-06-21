@@ -18,7 +18,7 @@ module.exports = function (app, passport) {
   });
 
 
-  app.post('/post/create', function(req, res){
+  app.post('/post', function(req, res){
     var post = new Post();
 
     post.name = req.body.name;
@@ -32,6 +32,11 @@ module.exports = function (app, passport) {
       res.send("Your post has been saved");
       console.log("post saved!");
     });
+  });
+
+  app.get('/post', function(req, res){
+    var posts = new Post();
+    res.send(posts);
   });
 
   app.post('/user/create', function(req, res){
@@ -54,7 +59,7 @@ module.exports = function (app, passport) {
     res.send(post);
   });  
 
-  app.put('/post/:id/edit', function(req, res){
+  app.put('/post/:id', function(req, res){
     var post = Post.findById(req.params.id);
     post.name = req.body.name;
     post.content = req.body.content;
@@ -70,15 +75,15 @@ module.exports = function (app, passport) {
   app.get('/post/comments', function(req, res){
     var comments = Comment.findById(req.params.post_id);
       res.send(comments);
-       //Is this logic correct to diaplay all the comments?
+       //Is this logic correct to display all the comments?
   });
 
-  app.get('/post/comment/:id', function(req, res){
+  app.get('/comment/:id', function(req, res){
     var comment = Comment.findById(req.params.id);
     res.send(comment);
   });
 
-  app.get('/post/comments/:id/edit', function(req, res){
+  app.put('/comments/:id', function(req, res){
     var comment = Comment.findById(req.params.id);
     comment.content = req.body.content;
     comment.save(function(err){
