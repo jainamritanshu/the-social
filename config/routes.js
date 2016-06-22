@@ -92,6 +92,36 @@ module.exports = function (app, passport) {
       res.send("Your comment was saved successfully!");
     });
   });
+
+  app.delete('/user/:id', function(req, res){
+    user = User.findById(req.params.id);
+    user.remove(function(err){
+      if err
+        throw err;
+
+      res.send('User deleted successfully!');
+    });
+  });
+
+  app.delete('/post/:id', function(req,res){
+    post = Post(req.params.id);
+    post.remove(function(err){
+      if err
+        throw err;
+
+      res.send('post removed successfully!');
+    });
+  });
+
+  app.delete('/comment/:id', function(res, req){
+    comment = Comment(req.params.id);
+    comment.remove(function(err){
+      if err
+        throw err;
+
+      res.send('you comment has been successfully deleted!');
+    });
+  });
     
 
   
