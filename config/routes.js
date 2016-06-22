@@ -39,7 +39,7 @@ module.exports = function (app, passport) {
     res.send(posts);
   });
 
-  app.post('/user/create', function(req, res){
+  app.post('/user', function(req, res){
     var user = new User;
 
     user.name = 'ashu';
