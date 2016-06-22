@@ -10,10 +10,10 @@ A boilerplate for building social web applications using express, passport and m
 
 # API
 	##requests used:
-		###**1.POST**
-		###**2.GET**
-		###**3.PUT**
-		###**4.DELETE**
+		**1.POST
+		2.GET
+		3.PUT
+		4.DELETE**
 
 'POST' request at 
 	*'''Javascript
