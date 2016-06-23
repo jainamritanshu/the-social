@@ -35,8 +35,12 @@ module.exports = function (app, passport) {
   });
 
   app.get('/post', function(req, res){
-    var posts = new Post();
-    res.send(posts);
+    var posts = Post.find(function(err, posts){
+      if err
+        throw err;
+
+      res.json(posts);
+    });
   });
 
   app.post('/user', function(req, res){
@@ -72,10 +76,24 @@ module.exports = function (app, passport) {
     });
   });
 
-  app.get('/post/comments', function(req, res){
-    var comments = Comment.findById(req.params.post_id);
-      res.send(comments);
+  app.get('/post/:id/comments', function(req, res){
+    var comments = Comment.map(post_id);
+    res.json(comments);
        //Is this logic correct to display all the comments?
+    });
+
+  app.post('/comment', function(req, res){
+    comment = Comment();
+    post = Post();
+
+    comment.content = req.body.content;
+    comment.post_id = req.post.id;
+    comment.save(function(err){
+      if (err)
+        throw err;
+
+      res.send('Your comment was published successfully!');
+    });
   });
 
   app.get('/comment/:id', function(req, res){
@@ -87,7 +105,7 @@ module.exports = function (app, passport) {
     var comment = Comment.findById(req.params.id);
     comment.content = req.body.content;
     comment.save(function(err){
-      if(err)
+      if (err)
         res.send(err);
       res.send("Your comment was saved successfully!");
     });
