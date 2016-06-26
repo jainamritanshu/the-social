@@ -1,10 +1,16 @@
-'use strict';
+//'use strict';
+
+/*
+ * nodejs-express-mongoose
+ * Copyright(c) 2015 Madhusudhan Srinivasa <madhums8@gmail.com>
+ * MIT Licensed
+ */
 
 /**
  * Module dependencies
  */
 
-require('dotenv').config({silent: true});
+require('dotenv').config();
 
 const fs = require('fs');
 const join = require('path').join;
@@ -23,15 +29,13 @@ const connection = connect();
  * Expose
  */
 
-module.exports = {
-  app,
-  connection
-};
+module.exports = app
+module.exports = connection
 
 // Bootstrap models
-fs.readdirSync(models)
-  .filter(file => ~file.indexOf('.js'))
-  .forEach(file => require(join(models, file)));
+//fs.readdirSync(models)
+  //.filter(file => ~file.indexOf('.js'))
+  //.forEach(file => require(join(models, file)));
 
 // Bootstrap routes
 require('./config/passport')(passport);

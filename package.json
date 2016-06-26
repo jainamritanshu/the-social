@@ -1,10 +1,10 @@
-{
+
   "name": "node-express-mongoose",
   "description": "A boilerplate application for express mongoose",
   "version": "1.0.0",
   "author": {
-    "name": "Madhusudhan Srinivasa",
-    "email": "me@madhums.me"
+    "name": "amritanshu",
+    "email": "jainamritanshu@gmail.com"
   },
   "engines": {
     "node": ">=6.x"
@@ -14,7 +14,7 @@
     "test": "./node_modules/.bin/cross-env NODE_ENV=test ./node_modules/.bin/babel-tape-runner test/test-*.js"
   },
   "dependencies": {
-    "body-parser": "1.15.1",
+    "body-parser": "1.15.2",
     "co": "~4.6.0",
     "compression": "~1.6.2",
     "connect-flash": "~0.1.1",
@@ -24,31 +24,27 @@
     "cross-env": "~1.0.7",
     "csurf": "1.9.0",
     "dotenv": "~2.0.0",
-    "ejs": "^2.4.2",
-    "express": "4.13.4",
+    "express": "4.14.0",
     "express-session": "~1.13.0",
     "forever": "~0.15.1",
-    "jade": "~1.11.0",
     "method-override": "~2.3.5",
-    "moment": "^2.13.0",
-    "mongoose": "~4.4.17",
+    "mongoose": "~4.5.0",
     "mongoose-user": "~0.0.1",
     "morgan": "~1.7.0",
-    "nightwatch": "^0.9.4",
     "passport": "~0.3.2",
     "passport-local": "~1.0.0",
+    "jade": "~1.11.0",
     "view-helpers": "~0.1.5",
     "winston": "~2.2.0"
   },
   "devDependencies": {
-    "babel-eslint": "~6.0.4",
+    "babel-eslint": "~6.1.0",
     "babel-preset-stage-0": "~6.5.0",
     "babel-tape-runner": "~2.0.1",
-    "eslint": "~2.11.0",
-    "karma": "^0.13.22",
+    "eslint": "~2.13.0",
     "nodemon": "~1.9.2",
     "supertest": "~1.2.0",
-    "tape": "~4.5.1"
+    "tape": "~4.6.0"
   },
   "repository": {
     "type": "git",
