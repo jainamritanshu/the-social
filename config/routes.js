@@ -8,6 +8,7 @@ var Comment = require('../app/models/user.js').comment;
 var User = require('../app/models/user.js').user;
 var Album = require('../app/models/user.js').album;
 var Image = require('../app/models/user.js').image;
+var route = express.router();
 
 
 module.exports = function (app, passport) {
@@ -16,6 +17,43 @@ module.exports = function (app, passport) {
     res.send("Hello!");
     console.log("ho gya");
   });
+
+  app.post('/user/authenticate', function(req, res) {
+
+  // find the user
+  User.findOne({
+    name: req.body.name
+  }, function(err, user) {
+
+    if (err) throw err;
+
+    if (!user) {
+      res.json({ success: false, message: 'Authentication failed. User not found.' });
+    } else if (user) {
+
+      // check if password matches
+      if (user.password != req.body.password) {
+        res.json({ success: false, message: 'Authentication failed. Wrong password.' });
+      } else {
+
+        // if user is found and password is right
+        // create a token
+        var token = jwt.sign(user, app.get('superSecret'), {
+          expiresInMinutes: 1440 // expires in 24 hours
+        });
+
+        // return the information including token as JSON
+        res.json({
+          success: true,
+          message: 'mil gya token!',
+          token: token
+        });
+      }   
+
+    }
+
+  });
+});
 
 
   app.post('/post', function(req, res){
