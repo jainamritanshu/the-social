@@ -56,7 +56,7 @@ module.exports = function (app, passport) {
 });
 
 
-  app.post('/post', function(req, res){
+  app.post('/post/create', function(req, res){
     var post = new Post();
 
     post.name = req.body.name;
@@ -72,6 +72,7 @@ module.exports = function (app, passport) {
     });
   });
 
+<<<<<<< HEAD
   app.get('/post', function(req, res){
     var posts = Post.find(function(err, posts){
       if err
@@ -82,6 +83,9 @@ module.exports = function (app, passport) {
   });
 
   app.post('/user', function(req, res){
+=======
+  app.post('/user/create', function(req, res){
+>>>>>>> parent of dfb1396... api done
     var user = new User;
 
     user.name = 'ashu';
@@ -101,7 +105,7 @@ module.exports = function (app, passport) {
     res.send(post);
   });  
 
-  app.put('/post/:id', function(req, res){
+  app.put('/post/:id/edit', function(req, res){
     var post = Post.findById(req.params.id);
     post.name = req.body.name;
     post.content = req.body.content;
@@ -114,6 +118,7 @@ module.exports = function (app, passport) {
     });
   });
 
+<<<<<<< HEAD
   app.get('/post/:id/comments', function(req, res){
     var comments = Comment.map(post_id);
     res.json(comments);
@@ -132,14 +137,20 @@ module.exports = function (app, passport) {
 
       res.send('Your comment was published successfully!');
     });
+=======
+  app.get('/post/comments', function(req, res){
+    var comments = Comment.findById(req.params.post_id);
+      res.send(comments);
+       //Is this logic correct to diaplay all the comments?
+>>>>>>> parent of dfb1396... api done
   });
 
-  app.get('/comment/:id', function(req, res){
+  app.get('/post/comment/:id', function(req, res){
     var comment = Comment.findById(req.params.id);
     res.send(comment);
   });
 
-  app.put('/comments/:id', function(req, res){
+  app.get('/post/comments/:id/edit', function(req, res){
     var comment = Comment.findById(req.params.id);
     comment.content = req.body.content;
     comment.save(function(err){
